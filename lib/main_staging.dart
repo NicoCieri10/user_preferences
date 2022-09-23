@@ -9,5 +9,5 @@ import 'package:user_preference/app/app.dart';
 import 'package:user_preference/bootstrap.dart';
 
 void main() {
-  bootstrap(() => const App());
+  bootstrap(MyApp.new);
 }

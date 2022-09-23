@@ -14,6 +14,8 @@ dependencies:
   flutter_bloc: ^8.0.1
   flutter_localizations:
     sdk: flutter
+  go_router: ^5.0.1
+  gotrue: ^0.2.3
   intl: ^0.17.0
 
 dev_dependencies:
@@ -26,3 +28,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+
+  assets:
+    - assets/

@@ -12,7 +12,7 @@ import 'package:user_preference/counter/counter.dart';
 void main() {
   group('App', () {
     testWidgets('renders CounterPage', (tester) async {
-      await tester.pumpWidget(const App());
+      await tester.pumpWidget(MyApp());
       expect(find.byType(CounterPage), findsOneWidget);
     });
   });

@@ -5,4 +5,9 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
-export 'view/app.dart';
+import 'package:user_preference/app/app.dart';
+import 'package:user_preference/bootstrap.dart';
+
+void main() {
+  bootstrap(MyApp.new);
+}
