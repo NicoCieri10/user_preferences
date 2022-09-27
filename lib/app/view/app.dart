@@ -1,10 +1,15 @@
+import 'package:appsize/appsize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:user_preference/home/home.dart';
 import 'package:user_preference/settings/settings.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(
+      AppSize.child(
+        child: MyApp(),
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
@@ -30,12 +35,14 @@ class MyApp extends StatelessWidget {
     routes: <GoRoute>[
       GoRoute(
         path: '/',
+        name: HomePage.name,
         builder: (context, state) {
           return const HomePage();
         },
       ),
       GoRoute(
         path: '/settings',
+        name: SettingsPage.name,
         builder: (context, state) {
           return const SettingsPage();
         },
