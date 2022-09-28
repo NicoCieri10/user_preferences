@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:user_preference/share_preferences/preferences.dart';
 import 'package:user_preference/widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,9 +14,17 @@ class HomePage extends StatelessWidget {
         title: const Text('Home'),
         backgroundColor: const Color(0xff191919),
       ),
-      drawer: CustomDrawer(),
-      body: const Center(
-        child: Text('HomePage'),
+      drawer: const CustomDrawer(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('isDarkmode: ${Preferences.isDarkmode}'),
+          const Divider(),
+          Text('Género: ${Preferences.gender}'),
+          const Divider(),
+          Text('Nombre de usuario: ${Preferences.name}'),
+          const Divider(),
+        ],
       ),
     );
   }

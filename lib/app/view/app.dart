@@ -1,15 +1,11 @@
-import 'package:appsize/appsize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:user_preference/home/home.dart';
 import 'package:user_preference/settings/settings.dart';
+import 'package:user_preference/share_preferences/preferences.dart';
 
-void main() => runApp(
-      AppSize.child(
-        child: MyApp(),
-      ),
-    );
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
@@ -17,8 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        systemNavigationBarColor: Colors.white,
+      SystemUiOverlayStyle(
+        systemNavigationBarColor:
+            Preferences.isDarkmode ? Colors.black : Colors.white,
         systemNavigationBarIconBrightness: Brightness.light,
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
@@ -28,6 +25,7 @@ class MyApp extends StatelessWidget {
       routerConfig: _router,
       title: 'Material App',
       debugShowCheckedModeBanner: false,
+      theme: Preferences.isDarkmode ? ThemeData.dark() : ThemeData.light(),
     );
   }
 
