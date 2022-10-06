@@ -16,5 +16,5 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Preferences.init();
 
-  unawaited(bootstrap(MyApp.new));
+  unawaited(bootstrap(App.new));
 }

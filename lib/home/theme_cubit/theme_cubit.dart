@@ -14,12 +14,14 @@ class ThemeCubit extends Cubit<ThemeState> {
         );
 
   void setLightMode(ThemeData currentTheme) {
-    currentTheme = ThemeData.light();
-    emit(ThemeState(currentTheme));
+    var theme = currentTheme;
+    theme = ThemeData.light();
+    emit(ThemeState(theme));
   }
 
   void setDarkMode(ThemeData currentTheme) {
-    currentTheme = ThemeData.dark();
-    emit(ThemeState(currentTheme));
+    var theme = currentTheme;
+    theme = ThemeData.dark();
+    emit(ThemeState(theme));
   }
 }

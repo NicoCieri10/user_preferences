@@ -22,7 +22,11 @@ class App extends StatelessWidget {
           create: (_) => ThemeCubit(isDarkmode: Preferences.isDarkmode),
         ),
       ],
-      child: MyApp(),
+      child: Builder(
+        builder: (context) {
+          return MyApp();
+        },
+      ),
     );
   }
 }
@@ -41,12 +45,14 @@ class MyApp extends StatelessWidget {
         statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
       ),
     );
-    final state = context.read<ThemeState>();
     return MaterialApp.router(
       routerConfig: _router,
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-      theme: state.currentTheme,
+      theme: context.read<ThemeState>().currentTheme,
+      // Preferences.isDarkmode
+      //  ? ThemeData.dark()
+      //  : ThemeData.light(),
     );
   }
 
